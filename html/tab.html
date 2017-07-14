@@ -70,7 +70,19 @@
 		.tabs > .show {
 			display: block;
 		}
+
 	</style>
+	<script type="text/javascript">
+		$(function(){
+			$(".tabs > ul > li").click(function(){
+				var _this = $( this );
+				var id = _this.siblings('.selected').removeClass('selected').children('a').attr('href');
+				$(id).removeClass('show');
+				var selector = _this.addClass('selected').children('a').attr('href');
+				$( selector ).addClass('show');
+			});
+		});
+	</script>
 </head>
 <body>
 	<div id="tabs" class="tabs">
@@ -83,15 +95,7 @@
 		<div id="tab-2" class="panel show">累积评论</div>
 		<div id="tab-3" class="panel">专享服务</div>
 	</div>
-	<script type="text/javascript">
-		$(".tabs > ul > li").click(function(){
-			var _this = $( this );
-			var id = _this.siblings('.selected').removeClass('selected').children('a').attr('href');
-			$(id).removeClass('show');
-			var selector = _this.addClass('selected').children('a').attr('href');
-			$( selector ).addClass('show');
-		});
-	</script>
+	
 	<!--
 	<script type="text/javascript">
 		var tabs = document.getElementById("tabs");
@@ -116,6 +120,7 @@
 					node.removeAttribute("class");
 					var id = node.firstChild.getAttribute("href");
 					document.getElementById( id ).className = "panel";
+					break;
 				}
 			}
 		}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+	<input type="button" value="添加一行"/>
+	<table>
+		<tr>
+			<td>test</td>
+			<td>test</td>
+			<td><a href="#">删除</a></td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+		var index = 1;
+		$('input[type=button]').click(function(){
+
+			var $tr = $('<tr></tr>');
+			var $td1 = $('<td></td>').html("这是新增的一行");
+			var $td2 = $('<td></td>').html("这是新增的一行" + index++);
+			$('<a href="#"></a>').html("删除").appendTo( $td2 );
+
+			$tr.append( $td1 ).append( $td2 );
+			$('table').append( $tr );
+		});
+
+		$('table').on("click",'tr>td>a', function(e){
+			e.preventDefault();
+			$(this).parents('tr').remove();
+		});
+
+
+	</script>
+</body>
+</html>
