@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		.clearfix:after{
+            content: ".";
+            display: block;
+            clear: both;
+            visibility: hidden;
+            line-height: 0;
+            height: 0;
+        }
+        
+        .clearfix{
+            display: inline-block;
+        }
+        
+        html[xmlns].clearfix{
+            display: block;
+        }
+       
+        *html.clearfix{
+            height: 1%;
+        }
+		a {
+			text-decoration: none;
+		}
+		ul {
+			list-style: none;
+			padding: 0;
+			margin: 0;
+		}
+		.tabs {
+			width: 500px;
+		}
+		.tabs > ul {
+			width: 100%;
+			border:1px solid #e5e5e5;
+			background: #f6f6f6;
+		}
+		.tabs > ul > li {
+			float: left;
+			height: 50px;
+			line-height: 50px;
+			border-right: 1px solid #e5e5e5;
+			padding: 0 15px;
+		}
+		.tabs > ul > li.selected {
+			background: #fff;
+			border-top: 2px solid #ff4400;
+			margin:-1px 0;
+			line-height: 48px;
+		}
+		.tabs > ul > li.selected > a {
+			color: #ff4400!important;
+		}
+		.tabs > ul > li > a {
+			color: #3c3c3c;
+		}
+		.tabs > ul > li > strong {
+			color: #FF4400;
+			padding-left: 5px;
+		}
+		.tabs > .panel {
+			display: none;
+		}
+		.tabs > .show {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+	<div class="tabs">
+		<ul class="clearfix">
+			<li><a href="#">宝贝详情</a></li>
+			<li class="selected"><a href="#">累积评论</a><strong>6666</strong></li>
+			<li><a href="#">专享服务</a></li>
+		</ul>
+		<div class="panel">宝贝详情</div>
+		<div class="panel show">累积评论</div>
+		<div class="panel">专享服务</div>
+	</div>
+</body>
+</html>
