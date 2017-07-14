@@ -178,3 +178,37 @@ a {
 	padding: 10px 25px;
    font-size: 15px;
 }
+.img-1 {
+	width: 400px;
+	height: 400px;
+}
+.img-2 > img {
+	width: 60px;
+	height: 50px;
+	margin: 10px 2px;
+
+}
+.img-2 > img:hover {
+	border: 2px solid #FF3300;
+	padding: 5px 5px;
+	margin: 3px -5px;
+}
+.location {
+	position: absolute;
+	left: 450px;
+}
+ .L-2 {
+	position: absolute;
+	top: 30px;
+	left: 1000px;
+	border: 1px solid #FFE48A;
+    height: 500px;
+}
+.tb-gold-icon {
+    position: absolute;
+    top: -11px;
+    right: 5px;
+    width: 48px;
+    height: 63px;
+    background-image: url(https://gtms01.alicdn.com/tps/i1/TB14n8xFVXXXXb0XXXXOX6EHXXX-48-63.png);
+}
