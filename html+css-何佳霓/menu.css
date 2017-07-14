@@ -170,6 +170,7 @@ a {
     width: 130px;
     padding: 10px 25px;
     font-size: 15px;
+    height: 48.8px;
 }
 .buy > ul > li > .button-2 {
 	background-color: #F22D00;
@@ -186,12 +187,11 @@ a {
 	width: 60px;
 	height: 50px;
 	margin: 10px 2px;
+	border: 2px solid #FFF;
 
 }
 .img-2 > img:hover {
 	border: 2px solid #FF3300;
-	padding: 5px 5px;
-	margin: 3px -5px;
 }
 .location {
 	position: absolute;
@@ -211,4 +211,13 @@ a {
     width: 48px;
     height: 63px;
     background-image: url(https://gtms01.alicdn.com/tps/i1/TB14n8xFVXXXXb0XXXXOX6EHXXX-48-63.png);
+}
+i {
+	display: inline-block;
+	background-image: url(img2/cart.png);
+	background-size: cover;
+	width: 20px;
+	height: 20px;
+    color: #FFF;
+    margin-right: 10px;
 }
