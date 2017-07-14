@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<style type="text/css">
+		.demo {
+			color: blue;
+		}
+	</style>
+</head>
+<body>
+	<div id="demo">
+		<a></a>
+	</div>
+	<ul>
+		<li>内容-01</li>
+		<li>内容-02</li>
+		<li>内容-03</li>
+		<li>内容-04</li>
+		<li>内容-05</li>
+	</ul>
+
+	<script type="text/javascript">
+
+		//document.getElementById("demo").innerHTML = "";
+		//$("#demo > a").html("这是jquery设置的html");
+		//
+		var demo = document.getElementById("demo");
+
+		//$( demo ).html("");
+
+		var $demo = $("#demo");
+
+		$("ul > li").click(function(){
+			//this.className = "";
+			$( this ).addClass("demo");
+		});
+
+		//$demo.get(0);
+
+		var c;
+
+
+	</script>
+</body>
+</html>
