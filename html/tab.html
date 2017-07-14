@@ -72,15 +72,44 @@
 	</style>
 </head>
 <body>
-	<div class="tabs">
+	<div id="tabs" class="tabs">
 		<ul class="clearfix">
-			<li><a href="#">宝贝详情</a></li>
-			<li class="selected"><a href="#">累积评论</a><strong>6666</strong></li>
-			<li><a href="#">专享服务</a></li>
+			<li><a href="tab-1">宝贝详情</a></li>
+			<li class="selected"><a href="tab-2">累积评论</a><strong>6666</strong></li>
+			<li><a href="tab-3">专享服务</a></li>
 		</ul>
-		<div class="panel">宝贝详情</div>
-		<div class="panel show">累积评论</div>
-		<div class="panel">专享服务</div>
+		<div id="tab-1" class="panel">宝贝详情</div>
+		<div id="tab-2" class="panel show">累积评论</div>
+		<div id="tab-3" class="panel">专享服务</div>
 	</div>
+
+	<script type="text/javascript">
+		var tabs = document.getElementById("tabs");
+		var list = tabs.firstChild.nextSibling.getElementsByTagName("li");
+		for(var i = 0; i < list.length; i++){
+			var li = list[i];
+			li.onclick = function( e ){
+				e.preventDefault();
+				reset(
+					this.parentNode.getElementsByTagName("li")
+					);
+				this.setAttribute("class","selected");
+				var id = this.firstChild.getAttribute("href");
+				document.getElementById( id ).className = "panel show";
+			}
+		}
+
+		function reset( nodes ){
+			for(var i = 0; i < nodes.length; i++){
+				var node = nodes[i];
+				if( node.className == "selected"){
+					node.removeAttribute("class");
+					var id = node.firstChild.getAttribute("href");
+					document.getElementById( id ).className = "panel";
+				}
+			}
+		}
+
+	</script>
 </body>
 </html>

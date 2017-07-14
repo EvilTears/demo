@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+	<style type="text/css">
+		.demo {
+			color: blue;
+		}
+	</style>
+
+</head>
+<body>
+	<div id="demo">
+		<a>这是a</a>
+		<span>这是span</span>
+	</div>
+	<a></a>
+
+	<ul id="list">
+		<li>内容-01</li>
+		<li>内容-02</li>
+		<li>内容-03</li>
+		<li>内容-04</li>
+		<li>内容-05</li>
+	</ul>
+
+	<script type="text/javascript">
+		function foo(obj){
+			obj.setAttribute("class","demo");
+		}
+
+		var ul = document.getElementById("list");
+		var list = ul.getElementsByTagName("li");
+		for(var i = 0; i < list.length; i++){
+			var li = list[i];
+			li.onclick = function(){
+				this.setAttribute("class","demo");
+			}
+		}
+
+
+		var demo = document.getElementById("demo");
+		//demo.innerHTML = "改变为什么呢!";
+		var a = demo.firstChild.nextSibling;
+		a.innerHTML = "找到你了";
+		//a.style.color = "red";
+		a.className = "";
+		a.setAttribute("title", "你来了");
+		//a.removeAttribute("title");
+
+
+		var arr = document.getElementsByTagName("div");
+		//arr[0].innerHTML = "你再改";
+	</script>
+</body>
+</html>
